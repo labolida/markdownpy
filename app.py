@@ -12,9 +12,11 @@ app = Flask(__name__)
 ##########################################################################################
 # CONFIG
 
-#DATA_PATH = "/disk01/repositories/markdownpy-data/"
-DATA_PATH = r'C:\\area\\dev\\markdownpy\\data\\'
-RESOURCES_PATH = 'C:\\area\\dev\\markdownpy\\resources\\'
+# LINUX
+DATA_PATH = "/area6/python/dev/markdownpy/data/"
+RESOURCES_PATH = "/area6/python/dev/markdownpy/resources/"
+#DATA_PATH = r'C:\\area\\dev\\markdownpy\\data\\'
+#RESOURCES_PATH = 'C:\\area\\dev\\markdownpy\\resources\\'
 
 ##########################################################################################
 @app.route('/')

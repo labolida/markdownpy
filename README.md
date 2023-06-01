@@ -14,6 +14,12 @@ After "download" or "git clone" this project, do:
 
     On windows, use: python -m venv venv
 
+    If markdown library can't be found when you are starting the server, try:
+
+        $ rm -r ./venv
+        $ python -m venv venv
+        $ pip install markdown
+        $ pip install flask
 
 ## Start the server
 
@@ -21,6 +27,9 @@ After "download" or "git clone" this project, do:
     $ flask --debug run --host 0.0.0.0 --port 80 --reload
 
     On windows, use: venv\Scripts\activate.bat
+
+    Remember, on linux you must to use "sudo" to bind on low ports. 
+    You could use --port 5000 instead.
 
 ## Access the url with a browser:
 
