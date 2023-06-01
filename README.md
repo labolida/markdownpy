@@ -18,14 +18,17 @@ After "download" or "git clone" this project, do:
 ## Start the server
 
     $ source ./venv/bin/activate
-    $ flask --debug run --port 5009 --reload
+    $ flask --debug run --host 0.0.0.0 --port 80 --reload
 
     On windows, use: venv\Scripts\activate.bat
 
 ## Access the url with a browser:
 
     http://127.0.0.1:5009
-
+    http://127.0.0.1
+    http://127.0.0.1/api/
+    http://127.0.0.1/view/
+    http://127.0.0.1/raw/filename.png
 
 
 # Authors

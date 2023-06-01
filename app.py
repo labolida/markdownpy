@@ -31,6 +31,7 @@ def root():
 
 ##########################################################################################
 @app.route('/api')
+@app.route('/api/')
 def api():
     res = []
     for path in os.listdir(DATA_PATH):
