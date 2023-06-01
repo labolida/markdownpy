@@ -1,8 +1,7 @@
 # Markdown easy served as HTML
 
-Open source
-Python3 + Flask + Markdown
-
+ Open source
+ Python3 + Flask + Markdown
 
 ## Easy installation
 
@@ -39,8 +38,23 @@ After "download" or "git clone" this project, do:
     http://127.0.0.1/view/
     http://127.0.0.1/raw/filename.png
 
+## Docker Container
+
+ https://hub.docker.com/repository/docker/lmldocker/markdownpy/general
+
+    docker run -it --rm -p 8080:8080 lmldocker/markdownpy:1.0
+
+ or
+
+    docker run -d -p 8080:8080 \
+    -v /area6/docker/volume/markdownpy/data:/area6/python/dev/markdownpy/data \
+    -v /area6/docker/volume/markdownpy/resources:/area6/python/dev/markdownpy/resources \
+    lmldocker/markdownpy:1.0
+
+ The server runs on --reload mode!
 
 # Authors
+
     Leonardo M Labolida (Spain/Brasil)
     Tomás R Pita        (Spain/Venezuela)
 
