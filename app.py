@@ -1,5 +1,5 @@
 ##########################################################################################
-###  MARKDOWN EASY WEB SERVER
+###  MARKDOWNPY EASY WEB SERVER
 ##########################################################################################
 
 from flask import Flask
@@ -15,7 +15,6 @@ app = Flask(__name__)
 DATA_PATH = r'C:\\area\\dev\\markdownpy\\data\\'
 RESOURCES_PATH = 'C:\\area\\dev\\markdownpy\\resources\\'
 
-
 ##########################################################################################
 @app.route('/')
 def root():
@@ -26,7 +25,6 @@ def root():
             res.append(path)
     print(res)
     return res
-
 
 ##########################################################################################
 @app.route('/view' , methods=["GET", "POST"] )
@@ -42,11 +40,8 @@ def view( filename="index.md"):
     return html
 
 
-
-
 ##########################################################################################
 def fileRead( filename ):
     with open( filename, "r", encoding="utf-8") as input_file:
         text = input_file.read()
     return text
-
