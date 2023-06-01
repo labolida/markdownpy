@@ -3,6 +3,7 @@
 ##########################################################################################
 
 from flask import Flask
+from flask import send_file
 import markdown
 import os
 
@@ -39,6 +40,12 @@ def view( filename="index.md"):
     print(html)
     return html
 
+##########################################################################################
+@app.route('/raw' , methods=["GET"] )
+@app.route('/raw/<filename>' , methods=["GET"] )
+def raw (filename=None):
+    print("RAWFILES")
+    return send_file( DATA_PATH+filename )
 
 ##########################################################################################
 def fileRead( filename ):
