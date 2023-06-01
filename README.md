@@ -1,4 +1,4 @@
-# Markdown easy served as HTML 
+# Markdown easy served as HTML
 
 Open source
 Python3 + Flask + Markdown
@@ -8,13 +8,16 @@ Python3 + Flask + Markdown
 
 After "download" or "git clone" this project, do:
 
-    $ python -m venv venv
-    $ pip install markdown
-    $ pip install flask
+
+    $ python3 -m venv venv
+    $ pip install -r requirements.txt
+
+    On windows, use: python -m venv venv
+
 
 ## Start the server
 
-    $ venv/bin/activate
+    $ source ./venv/bin/activate
     $ flask --debug run --port 5009 --reload
 
     On windows, use: venv\Scripts\activate.bat
