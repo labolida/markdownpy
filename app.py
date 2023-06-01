@@ -1,5 +1,5 @@
 ##########################################################################################
-###  MARKDOWNPY EASY WEB SERVER
+###  MARKDOWNPY EASY WEB SERVER - Keep It Simple, Stupid!
 ##########################################################################################
 
 from flask import Flask
@@ -19,7 +19,19 @@ RESOURCES_PATH = 'C:\\area\\dev\\markdownpy\\resources\\'
 ##########################################################################################
 @app.route('/')
 def root():
-    
+    res = []
+    for path in os.listdir(DATA_PATH):
+        if os.path.isfile(os.path.join(DATA_PATH, path)):
+            res.append(path)
+    print(res)
+    html=""
+    for fn in res:
+        html = html + "<a href='/view/"+ fn + "'>" + fn + "</a><br>";
+    return html
+
+##########################################################################################
+@app.route('/api')
+def api():
     res = []
     for path in os.listdir(DATA_PATH):
         if os.path.isfile(os.path.join(DATA_PATH, path)):
@@ -29,6 +41,7 @@ def root():
 
 ##########################################################################################
 @app.route('/view' , methods=["GET", "POST"] )
+@app.route('/view/' , methods=["GET", "POST"] )
 @app.route('/view/<filename>' , methods=["GET", "POST"] )
 def view( filename="index.md"):
     html = ""
