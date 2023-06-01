@@ -27,7 +27,7 @@ After "download" or "git clone" this project, do:
 
 # Authors
     Leonardo M Labolida (Spain/Brasil)
-    Tomás R Pita        (Spain/Colombia)
+    Tomás R Pita        (Spain/Venezuela)
 
 # Donation
 
