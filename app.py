@@ -13,10 +13,10 @@ app = Flask(__name__)
 # CONFIG
 
 # LINUX
-DATA_PATH = "/area6/python/dev/markdownpy/data/"
-RESOURCES_PATH = "/area6/python/dev/markdownpy/resources/"
-#DATA_PATH = r'C:\\area\\dev\\markdownpy\\data\\'
-#RESOURCES_PATH = 'C:\\area\\dev\\markdownpy\\resources\\'
+#DATA_PATH = "/area6/python/dev/markdownpy/data/"
+#RESOURCES_PATH = "/area6/python/dev/markdownpy/resources/"
+DATA_PATH = r'C:\\area\\dev\\markdownpy\\data\\'
+RESOURCES_PATH = 'C:\\area\\dev\\markdownpy\\resources\\'
 
 ##########################################################################################
 @app.route('/')
@@ -27,8 +27,11 @@ def root():
             res.append(path)
     print(res)
     html=""
+    html = html + fileRead( RESOURCES_PATH+"header.html")
     for fn in res:
-        html = html + "<a href='/view/"+ fn + "'>" + fn + "</a><br>";
+        if fn.endswith(".md"):
+            html = html + "<a href='/view/"+ fn + "'>" + fn + "</a><br>";
+    html = html + fileRead( RESOURCES_PATH+"footer.html")
     return html
 
 ##########################################################################################
