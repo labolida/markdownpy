@@ -4,7 +4,7 @@ COPY . /area6/python/dev/markdownpy/
 
 WORKDIR /area6/python/dev/markdownpy/
 
-RUN rm -r venv
+#RUN rm -r venv
 
 RUN python -m venv venv
 RUN pip install markdown
