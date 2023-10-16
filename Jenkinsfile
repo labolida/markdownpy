@@ -12,18 +12,10 @@ node {
         }
     }
     stage('kubernetes deploy') {
-        steps {
-            script {
-                kubernetesDeploy(configs: "kubernetes-pod.yaml")
-            }
-        }
+        kubernetesDeploy(configs: "kubernetes-pod.yaml")
     }
     stage('kubernetes expose service') {
-        steps {
-            script {
-                kubernetesDeploy(configs: "kubernetes-svc.yaml")
-            }
-        }
+        kubernetesDeploy(configs: "kubernetes-svc.yaml")
     }
 
 }
