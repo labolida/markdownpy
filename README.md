@@ -75,9 +75,7 @@ spec:
 
 
 
-
-
-kubectl expose pod markdownpy --name=markdownpy-svc --type=NodePort  --port=8080     --dry-run=client -o yaml
+kubectl expose pod markdownpy --name=markdownpy-svc --type=NodePort  --port=8888     --dry-run=client -o yaml
 
 apiVersion: v1
 kind: Service
@@ -87,9 +85,9 @@ metadata:
   name: markdownpy-svc
 spec:
   ports:
-  - port: 1087
+  - port: 8888
     protocol: TCP
-    targetPort: 8080
+    targetPort: 8888
   selector:
     run: markdownpy
   type: NodePort
@@ -97,6 +95,7 @@ spec:
 
 
 
+k exec -ti pod/markdownpy -- sh
 
 
 

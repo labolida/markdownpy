@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: markdownpy
+  name: markdownpy
+spec:
+  containers:
+  - image: lmldocker/markdownpy:1.1
+    name: markdownpy
+    ports:
+    - containerPort: 8080
