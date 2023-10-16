@@ -1,21 +1,29 @@
 node {
     def app
-    stage('Clone repository') {
+    stage('Clone git repository') {
         checkout scm
     }
-    stage('Build image') {
+    stage('Build container image') {
         app = docker.build("lmldocker/markdownpy:1.1")
     }
-    stage('Push image') {
+    stage('Push container image to public registry') {
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             app.push("1.1")
         }
     }
-    stage('kubernetes run pod ') {
+    stage('kubernetes deploy') {
         steps {
             script {
-                kubernetesDeploy(configs: "kubernetes-pod.yaml", "kubernetes-svc.yaml")
+                kubernetesDeploy(configs: "kubernetes-pod.yaml")
             }
         }
     }
+    stage('kubernetes expose service') {
+        steps {
+            script {
+                kubernetesDeploy(configs: "kubernetes-svc.yaml")
+            }
+        }
+    }
+
 }
